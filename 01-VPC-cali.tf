@@ -1,6 +1,5 @@
 resource "aws_vpc" "CA_VPC" {              # VPC ID: aws_vpc.CA_VPC.id  
-  provider         = aws.california
-  cidr_block       = "10.244.0.0/16"
+   cidr_block       = "10.244.0.0/16"
   
   tags = {
     Name = "CA_VPC"

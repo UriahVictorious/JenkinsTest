@@ -1,6 +1,5 @@
 # Launch Template for Port 80
-resource "aws_launch_template" "ec2-cali-80" {
-  provider         = aws.california
+resource "aws_launch_template" "ec2-cali-80" {  
   name_prefix   = "ec2-cali-80"
   image_id      = "ami-038bba9a164eb3dc1"
   instance_type = "t2.micro"
@@ -72,8 +71,7 @@ resource "aws_launch_template" "ec2-cali-80" {
 
 
 # Launch Template for Port 443
-resource "aws_launch_template" "ec2-cali-443" {
-  provider         = aws.california
+resource "aws_launch_template" "ec2-cali-443" {  
   name_prefix   = "ec2-cali-443"
   image_id      = "ami-038bba9a164eb3dc1"
   instance_type = "t2.micro"

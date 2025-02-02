@@ -1,7 +1,5 @@
 #Target Group for Port 80 app
 
-
-
 #California Security Group
 resource "aws_security_group" "ec2-cali-sg80" {
   provider = aws.california
@@ -119,4 +117,3 @@ resource "aws_security_group" "ca_SL01-SG01-443" {
   }
 
 }
-

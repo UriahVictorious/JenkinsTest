@@ -1,5 +1,4 @@
-resource "aws_autoscaling_group" "ca_asg80" {
-  provider         = aws.california
+resource "aws_autoscaling_group" "ca_asg80" {  
   name_prefix           = "ca-auto-scaling-group-"
   min_size              = 1
   max_size              = 4
@@ -52,8 +51,7 @@ resource "aws_autoscaling_group" "ca_asg80" {
 
 
 # Auto Scaling Policy
-resource "aws_autoscaling_policy" "ca_scaling_policy" {
-  provider         = aws.california
+resource "aws_autoscaling_policy" "ca_scaling_policy" {  
   name                   = "ca-cpu-target"
   autoscaling_group_name = aws_autoscaling_group.ca_asg80.name
 
@@ -69,16 +67,14 @@ resource "aws_autoscaling_policy" "ca_scaling_policy" {
 }
 
 # Enabling instance scale-in protection
-resource "aws_autoscaling_attachment" "ca_asg80_attachment" {
-  provider         = aws.california
+resource "aws_autoscaling_attachment" "ca_asg80_attachment" {  
   autoscaling_group_name = aws_autoscaling_group.ca_asg80.name
   lb_target_group_arn   = aws_lb_target_group.ca_lb_tg80.arn
 }
 
 
 # ASG 443 - Secure
-resource "aws_autoscaling_group" "ca_asg443" {
-  provider         = aws.california
+resource "aws_autoscaling_group" "ca_asg443" {  
   name_prefix           = "ca443-auto-scaling-group-"
   min_size              = 1
   max_size              = 4
@@ -131,8 +127,7 @@ resource "aws_autoscaling_group" "ca_asg443" {
 
 
 # Auto Scaling Policy
-resource "aws_autoscaling_policy" "ca443_scaling_policy" {
-  provider         = aws.california
+resource "aws_autoscaling_policy" "ca443_scaling_policy" {  
   name                   = "ca-cpu-target"
   autoscaling_group_name = aws_autoscaling_group.ca_asg443.name
 
@@ -148,8 +143,7 @@ resource "aws_autoscaling_policy" "ca443_scaling_policy" {
 }
 
 # Enabling instance scale-in protection
-resource "aws_autoscaling_attachment" "ca443_asg_attachment" {
-  provider         = aws.california
+resource "aws_autoscaling_attachment" "ca443_asg_attachment" {  
   autoscaling_group_name = aws_autoscaling_group.ca_asg443.name
   lb_target_group_arn   = aws_lb_target_group.ca_lb_tg443.arn
 }

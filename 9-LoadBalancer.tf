@@ -3,8 +3,7 @@
 
 ##########################################################################################################################
 # CALIFORNIA LOAD BALANCER
-resource "aws_lb" "ca_lb01" {
-  provider           = aws.california
+resource "aws_lb" "ca_lb01" {  
   name               = "ca-load-balancer"
   internal           = false
   load_balancer_type = "application"
@@ -24,8 +23,7 @@ resource "aws_lb" "ca_lb01" {
   }
 }
 
-resource "aws_lb_listener" "ca-http" {
-  provider          = aws.california
+resource "aws_lb_listener" "ca-http" {  
   load_balancer_arn = aws_lb.ca_lb01.arn
   port              = 80
   protocol          = "HTTP"
@@ -36,16 +34,14 @@ resource "aws_lb_listener" "ca-http" {
   }
 }
 
-data "aws_acm_certificate" "cert-ca" {
-  provider = aws.california
+data "aws_acm_certificate" "cert-ca" {  
   domain   = "jastek.click"
   statuses = ["ISSUED"]
   most_recent = true
 }
 
 
-resource "aws_lb_listener" "ca-https" {
-  provider          = aws.california
+resource "aws_lb_listener" "ca-https" {  
   load_balancer_arn = aws_lb.ca_lb01.arn
   port              = 443
   protocol          = "HTTPS"
@@ -63,4 +59,3 @@ output "ca-lb_dns_name" {
   value       = aws_lb.ca_lb01.dns_name
   description = "The DNS name of the California Load Balancer."
 }
-

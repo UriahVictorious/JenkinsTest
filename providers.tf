@@ -10,6 +10,12 @@ provider "aws" {
 }
 
  
+# California - additional provider configuration for Asia Pacific region
+# reference this as `aws.california`.
+provider "aws" {
+  alias  = "california"
+  region = "us-west-1"
+}
 
 
 # Cloudwatch Requirement for us-east-1
