@@ -1,3 +1,4 @@
+/*
 resource "aws_autoscaling_group" "ca_asg80" {  
   name_prefix           = "ca-auto-scaling-group-"
   min_size              = 1
@@ -147,3 +148,5 @@ resource "aws_autoscaling_attachment" "ca443_asg_attachment" {
   autoscaling_group_name = aws_autoscaling_group.ca_asg443.name
   lb_target_group_arn   = aws_lb_target_group.ca_lb_tg443.arn
 }
+
+*/

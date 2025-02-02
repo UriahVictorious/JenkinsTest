@@ -3,6 +3,8 @@
 
 ##########################################################################################################################
 # CALIFORNIA LOAD BALANCER
+
+/*
 resource "aws_lb" "ca_lb01" {  
   name               = "ca-load-balancer"
   internal           = false
@@ -59,3 +61,4 @@ output "ca-lb_dns_name" {
   value       = aws_lb.ca_lb01.dns_name
   description = "The DNS name of the California Load Balancer."
 }
+*/

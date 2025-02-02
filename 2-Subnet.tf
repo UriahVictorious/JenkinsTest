@@ -82,6 +82,8 @@ resource "aws_internet_gateway" "CA_IGW" {     # Internet Gateway ID: aws_intern
     Name = "CA_IGW"
   }
 }
+
+
 /*
 
 # CALIFORNIA Route Table
