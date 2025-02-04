@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        AWS_REGION = 'us-west-1' 
+        AWS_REGION = 'us-east-1' 
     }
     stages {
         stage('Set AWS Credentials') {

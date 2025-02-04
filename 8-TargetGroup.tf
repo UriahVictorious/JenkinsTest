@@ -1,9 +1,9 @@
 # CALIFORNIA TARGET GROUPS for LOAD BALANCER
-resource "aws_lb_target_group" "ca_lb_tg80" {
-  name     = "ca-lb-tg80"
+resource "aws_lb_target_group" "nc_lb_tg80" {
+  name     = "nc-lb-tg80"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.CA_VPC.id
+  vpc_id   = aws_vpc.NC_VPC.id
   target_type = "instance"
 
   health_check {
@@ -18,19 +18,19 @@ resource "aws_lb_target_group" "ca_lb_tg80" {
   }
 
   tags = {
-    Name    = "ca-LB-TargetGroup"
+    Name    = "nc-LB-TargetGroup"
     Service = "LoadBalancer"
-    Owner   = "Blackneto"
-    Project = "Test"
+    Owner   = "Him"
+    Project = "Sowf"
   }
 }
 
 
-resource "aws_lb_target_group" "ca_lb_tg443" {
-  name     = "ca-tg443"
+resource "aws_lb_target_group" "nc_lb_tg443" {
+  name     = "nc-tg443"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.CA_VPC.id
+  vpc_id   = aws_vpc.NC_VPC.id
   target_type = "instance"
 
   health_check {
@@ -45,9 +45,9 @@ resource "aws_lb_target_group" "ca_lb_tg443" {
   }
 
   tags = {
-    Name    = "ca-lb-TargetGroup443"
+    Name    = "nc-lb-TargetGroup443"
     Service = "LoadBalancer"
-    Owner   = "User"
-    Project = "TMMC"
+    Owner   = "Him"
+    Project = "Sowf"
   }
 }

@@ -1,9 +1,9 @@
 #Target Group for Port 80 app
 
 #California Security Group
-resource "aws_security_group" "ec2-cali-sg80" {
-  provider = aws.california
-  vpc_id = aws_vpc.CA_VPC.id 
+resource "aws_security_group" "ec2-nc-sg80" {
+  provider = aws.virginia
+  vpc_id = aws_vpc.NC_VPC.id 
   /*
   tags = {
     Name = "cali-sg"
@@ -29,21 +29,21 @@ resource "aws_security_group" "ec2-cali-sg80" {
   }
   
   tags = {
-    Name    = "ec2-cali-sg80"
+    Name    = "ec2-nc-sg80"
     # Name: "${var.env_prefix}-sg-80"
     Service = "web-application"
-    Owner   = "Balactus"
-    Planet  = "Taa"
+    Owner   = "Him"
+    Planet  = "Sowf"
   }
 }
 
 
 # CALIFORNIA Port 443 Security Group for Load Balancer 443 - add ingress for 443
-resource "aws_security_group" "cali-LB01-sg443" {
-  provider         = aws.california
-  name        = "ca_LB01-SG01-443"
-  description = "ec2-cali-sg443"
-  vpc_id      = aws_vpc.CA_VPC.id
+resource "aws_security_group" "nc-LB01-sg443" {
+  provider         = aws.virginia
+  name        = "nc_LB01-SG01-443"
+  description = "ec2-nc-sg443"
+  vpc_id      = aws_vpc.NC_VPC.id
 
   ingress {
     description = "MyHomePage"
@@ -69,10 +69,10 @@ resource "aws_security_group" "cali-LB01-sg443" {
   }
 
   tags = {
-    Name    = "ec2-cali-sg443"
+    Name    = "ec2-nc-sg443"
     Service = "application1"
-    Owner   = "Blackneto"
-    Planet  = "Taa"
+    Owner   = "Him"
+    Planet  = "Sowf"
   }
 
 }
@@ -80,11 +80,11 @@ resource "aws_security_group" "cali-LB01-sg443" {
 
 
 # CALIFORNIA Port 443 Security Group for Syslog Server 443 - add ingress for 443
-resource "aws_security_group" "ca_SL01-SG01-443" {
-  provider         = aws.california
-  name        = "ca_SL01-SG01-443"
-  description = "ca_SL01-SG01-443"
-  vpc_id      = aws_vpc.CA_VPC.id
+resource "aws_security_group" "nc_SL01-SG01-443" {
+  provider         = aws.virginia
+  name        = "nc_SL01-SG01-443"
+  description = "nc_SL01-SG01-443"
+  vpc_id      = aws_vpc.NC_VPC.id
 
   ingress {
     description = "MyHomePage"
@@ -110,10 +110,10 @@ resource "aws_security_group" "ca_SL01-SG01-443" {
   }
 
   tags = {
-    Name    = "ca_SL01-SG01-443"
+    Name    = "nc_SL01-SG01-443"
     Service = "application1"
-    Owner   = "Blackneto"
-    Planet  = "Taa"
+    Owner   = "Him"
+    Planet  = "Sowf"
   }
 
 }

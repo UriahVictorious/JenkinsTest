@@ -1,12 +1,12 @@
 # Launch Template for Port 80
-resource "aws_launch_template" "ec2-cali-80" {  
-  name_prefix   = "ec2-cali-80"
+resource "aws_launch_template" "ec2-nc-80" {  
+  name_prefix   = "ec2-nc-80"
   image_id      = "ami-038bba9a164eb3dc1"
   instance_type = "t2.micro"
 
-  key_name = "MyLinuxBox"
+  key_name = "UriahSecPair"
 
-  vpc_security_group_ids = [aws_security_group.ec2-cali-sg80.id]
+  vpc_security_group_ids = [aws_security_group.ec2-nc-sg80.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
@@ -57,10 +57,10 @@ resource "aws_launch_template" "ec2-cali-80" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "ec2-cali-80"
+      Name    = "ec2-nc-80"
       Service = "application1"
-      Owner   = "Blackneto"
-      Planet  = "Taa"
+      Owner   = "Him"
+      Planet  = "Sowf"
     }
   }
 
@@ -71,14 +71,14 @@ resource "aws_launch_template" "ec2-cali-80" {
 
 
 # Launch Template for Port 443
-resource "aws_launch_template" "ec2-cali-443" {  
-  name_prefix   = "ec2-cali-443"
+resource "aws_launch_template" "ec2-nc-443" {  
+  name_prefix   = "ec2-nc-443"
   image_id      = "ami-038bba9a164eb3dc1"
   instance_type = "t2.micro"
 
-  key_name = "MyLinuxBox"
+  key_name = "UriahSecPair"
 
-  vpc_security_group_ids = [aws_security_group.ca_SL01-SG01-443.id]
+  vpc_security_group_ids = [aws_security_group.nc_SL01-SG01-443.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
@@ -129,10 +129,10 @@ resource "aws_launch_template" "ec2-cali-443" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "cali-SysLog-443"
+      Name    = "nc-SysLog-443"
       Service = "application1"
-      Owner   = "Blackneto"
-      Planet  = "Taa"
+      Owner   = "Him"
+      Planet  = "Sowf"
     }
   }
 

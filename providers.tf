@@ -6,14 +6,14 @@
 # California - additional provider configuration for Asia Pacific region
 # reference this as `aws.california`.
 provider "aws" {
-  region = "us-west-1"
+  region = "us-east-1"
 }
 
 # California - additional provider configuration for Asia Pacific region
 # reference this as `aws.california`.
 provider "aws" {
-  alias  = "california"
-  region = "us-west-1"
+  alias  = "virginia"
+  region = "us-east-1"
 }
 
 # Providers - terraform
